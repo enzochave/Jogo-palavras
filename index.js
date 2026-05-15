@@ -26,7 +26,8 @@ async function iniciarJogo(event) {
 
     if (event.key == "Enter") {
 
-        const nickname = document.getElementById('nickname-input').value
+        const nickname = document.getElementById('nickname-input').value.trim()
+        const nivel = document.getElementById('difficulty-input').value
 
         if (!nickname) {
             alert('Preencha o nickname')
@@ -40,7 +41,8 @@ async function iniciarJogo(event) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                nickname: nickname
+                nickname: nickname,
+                nivel: nivel
             })
         })
 
@@ -133,8 +135,11 @@ async function tentarLetra(event) {
 
         data.posicoes.forEach(pos => {
 
-            document.getElementById(`slot-${pos}`).innerText =
-                caractere
+            const slot = document.getElementById(`slot-${pos}`)
+
+            if (slot) {
+                slot.innerText = caractere
+            }
         })
 
 
@@ -212,8 +217,11 @@ async function tentarLetra(event) {
 
                     for (let i = 0; i < palavra.length; i++) {
 
-                        document.getElementById(`slot-${i}`).innerText =
-                            palavra[i]
+                        const slot = document.getElementById(`slot-${i}`)
+
+                        if (slot) {
+                            slot.innerText = palavra[i]
+                        }
                     }
                 }
             }
