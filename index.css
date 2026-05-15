@@ -369,3 +369,52 @@ body.derrota .container{
         box-shadow: 0 0 20px rgba(96,165,250,0.5);
     }
 }
+
+/* ==========================
+   ESCOLHER DIFICULDADE
+========================== */
+
+.difficulty-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.difficulty-label {
+    font-size: 15px;
+    color: #cbd5e1;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#difficulty-input {
+    width: 220px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 2px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.06);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+#difficulty-input:hover {
+    transform: scale(1.03);
+    border-color: #60a5fa;
+}
+
+#difficulty-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59,130,246,0.5);
+}
+
+#difficulty-input option {
+    background: #111827;
+    color: white;
+}
